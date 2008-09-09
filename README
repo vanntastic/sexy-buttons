@@ -1,0 +1,69 @@
+Sexy Buttons
+============
+
+This is plugin that will generate the necessary files to use sexy buttons as outlined
+in Particletree article about rediscovering the button element: 
+  
+  http://particletree.com/features/rediscovering-the-button-element/
+  
+It will also provide you with some nice (magical) button helpers named after the icons
+themselves, so it's like an abstraction of the famfamfam/silk icons into a rails button 
+suite...
+  
+INSTALLATION
+============
+
+1. rake sexy_buttons:install, this will copy the css files and the famfamfam
+   icons into /images/sexy_buttons/
+2. put <%= bring_sexy_back %> in your layout file, preferably in the head section 
+
+USAGE
+=====
+
+Simply use the sexy_buttons block to add your buttons and you can reference any type
+of button by the name of the image (in the sexy_buttons dir):
+
+EXAMPLE:
+
+  <% sexy_buttons do %>
+    
+    <%= submit 'Submit Form' %>
+    <%= accept_button 'Accept', post_path %>
+    
+  <% end %>
+  
+What's real cool is that the button method names are automatically generated based on 
+the name of of the icons. So if you know the name of the icon, then you know the name 
+of the method.
+
+HELPERS AND METHODS
+===================
+
+- bring_sexy_back
+  ---------------
+  An include helper method that automatically includes all the css files that you need,
+  assuming that you ran the rake installation task
+  
+- sexy_buttons(html_options={},&block)
+  ------------------------------------
+  The sexy buttons block, it is a requirement for you to use sexy buttons, basically
+  a container for the buttons, the container tag will default to :div, but you 
+  can use anything else...
+  
+- [name_of_icon]_button(value='', path, html_options={})
+  -----------------------------------------------------
+  This is the general button helper method, simply just type in the name of the icon
+  + '_button'
+    
+    - simply use button if you want a blank button...
+  
+- submit(value='', html_options={})
+  ---------------------------------
+  A sexy button alternative to submit_tag, takes the same options as submit_tag
+
+TODO
+====
+
+- write tests
+
+Silk Icons from http://famfamfam.com/lab/icons/silk/, released under the Creative Commons Attribution 2.5 License
