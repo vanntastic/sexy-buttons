@@ -3,7 +3,6 @@ module Sexy
   module Buttons
     
     ICONS_WITH_PATH = Dir.glob(File.join("public/images/icons","*.png"))
-    # ICONS_WITH_PATH = Dir.glob(File.join("vendor/plugins/sexy_buttons/images/famfamfam/","*.png"))
     ICONS = ICONS_WITH_PATH.map { |i| i.split("/").last }
     
     # am i carrying the sexy theme too far... maybe i am
