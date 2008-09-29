@@ -1,6 +1,6 @@
 require 'fileutils'
 PUBLIC_PATH = File.expand_path(File.join(RAILS_ROOT, "public"))
-PLUGIN_PATH = File.expand_path(File.join(RAILS_ROOT,"vendor/plugins/sexy_buttons"))
+PLUGIN_PATH = File.expand_path(File.join(RAILS_ROOT,"vendor/plugins/sexy-buttons"))
 
 namespace :sexy_buttons do
   
@@ -11,9 +11,9 @@ namespace :sexy_buttons do
     icons = Dir.glob(File.join(PLUGIN_PATH,"images","famfamfam","*.png"))
     css = Dir.glob(File.join(PLUGIN_PATH,"css","*.css"))
     
-    Dir.mkdir public_icon_path
+    Dir.mkdir public_icon_path unless File.exists?(public_icon_path)
     
-    FileUtils.cp_r(icons,public_icon_path)
+    FileUtils.cp_r(icons, public_icon_path)
     FileUtils.cp_r(css, public_css_path)
     
     puts "All Sexy Button files have been installed!"
