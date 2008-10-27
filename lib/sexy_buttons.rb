@@ -8,7 +8,7 @@ module Sexy
     # am i carrying the sexy theme too far... maybe i am
     def bring_sexy_back(options={})
       options[:rounded] ||= false
-      return options[:rounded] ? stylesheet_link_tag('buttons') : stylesheet_link_tag("buttons-rounded")
+      return options[:rounded] ? stylesheet_link_tag('buttons-rounded') : stylesheet_link_tag("buttons")
     end
     
     # this begins the sexy buttons block, it defaults to using a div tag, 
