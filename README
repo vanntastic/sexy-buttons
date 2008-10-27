@@ -15,7 +15,7 @@ INSTALLATION
 
 1. rake sexy_buttons:install, this will copy the css files and the famfamfam
    icons into /images/sexy_buttons/
-2. put <%= bring_sexy_back %> in your layout file, preferably in the head section 
+2. put <%= bring_sexy_back %> in your layout file, preferably in the head section, you can alternatively use <%= bring_sexy_back :rounded => true %> to use the rounded versions of sexy buttons. 
 
 USAGE
 =====
@@ -39,10 +39,9 @@ of the method.
 HELPERS AND METHODS
 ===================
 
-- bring_sexy_back
+- bring_sexy_back options={}
   ---------------
-  An include helper method that automatically includes all the css files that you need,
-  assuming that you ran the rake installation task
+  An include helper method that automatically includes all the css files that you need, assuming that you ran the rake installation task, you can pass :rounded as true to use the rounded versions of the sexy buttons.
   
 - sexy_buttons(html_options={},&block)
   ------------------------------------
