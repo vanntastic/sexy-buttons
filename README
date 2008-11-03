@@ -48,7 +48,8 @@ HELPERS AND METHODS
   ------------------------------------
   The sexy buttons block, it is a requirement for you to use sexy buttons, basically
   a container for the buttons, the container tag will default to :div, but you 
-  can use anything else...
+  can use anything else... it can get tiring typing sexy_buttons all the time
+  so you can just use the alias buttons method.
   
 - [name_of_icon]_button(value='', path, html_options={})
   -----------------------------------------------------

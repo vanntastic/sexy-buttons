@@ -44,6 +44,8 @@ module Sexy
     # simply an abstraction of the link_to method to keep up with the theme
     def button(value='',path='',options={}); link_to value, path, options; end
     
+    # because typing sexy_buttons all the time just isn't sexy after awhile
+    alias :buttons :sexy_buttons 
   end
   
 end
