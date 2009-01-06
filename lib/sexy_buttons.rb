@@ -20,7 +20,11 @@ module Sexy
       
       tag = options[:tag]
       options.delete :tag
-      concat content_tag(tag, capture(&block), options), block.binding
+      
+      v_pre_2_1 = "concat(content_tag(tag, capture(&block), options), block.binding)"
+      v_after_2_1 = "concat(content_tag(tag, capture(&block), options))"
+      
+      return RAILS_GEM_VERSION.to_f > 2.1 ? eval(v_after_2_1) : eval(v_pre_2_1)
     end
     
     def submit(value='',options={})
