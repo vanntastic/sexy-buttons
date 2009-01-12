@@ -21,6 +21,7 @@ module Sexy
       tag = options[:tag]
       options.delete :tag
       
+      # rails 2.1 and after don't like the block.binding business
       v_pre_2_1 = "concat(content_tag(tag, capture(&block), options), block.binding)"
       v_after_2_1 = "concat(content_tag(tag, capture(&block), options))"
       
@@ -35,7 +36,6 @@ module Sexy
       button = content_tag :button, content, options
     end
     
-    
     # this is where all the magic happens, generates all button methods
     # remember that you can pass in the different button classes as being
     # positive, negative or it will default to standard
@@ -48,11 +48,21 @@ module Sexy
       END
     end
     
-    # simply an abstraction of the link_to method to keep up with the theme
+    # standard button with no icon
     def button(value='',path='',options={}); link_to value, path, options; end
     
     # because typing sexy_buttons all the time just isn't sexy after awhile
     alias :buttons :sexy_buttons 
+    
+    # button aliases for crud actions : add, edit, destroy, etc
+    # add_button is already added 
+    alias :destroy_button :cancel_button
+    alias :edit_button :pencil_button
+    
+    # some convenient button macros
+    alias :back_button :arrow_left_button
+    alias :refresh_button :arrow_refresh_button
+    
   end
   
 end
