@@ -28,11 +28,19 @@ module Sexy
       return RAILS_GEM_VERSION.to_f > 2.1 ? eval(v_after_2_1) : eval(v_pre_2_1)
     end
     
+    # default submit button
+    # pass in :icon to change the icon, it defaults to the tick.png icon
+    # EX : 
+    #   submit 'Submit' # => standard submit button
+    #   submit 'Submit', :icon => "email_go" # => submit button with the email_go.png icon
     def submit(value='',options={})
       options[:class] ||= "positive"
       options[:type] ||= "submit"
+      options[:icon] ||= "tick"
+      icon = options[:icon]
+      options.delete :icon
       
-      content = image_tag("/images/icons/tick.png") << value
+      content = image_tag("/images/icons/#{icon}.png") << value
       button = content_tag :button, content, options
     end
     
