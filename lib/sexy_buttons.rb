@@ -76,7 +76,6 @@ module Sexy
     alias :down_button :arrow_down_button
     alias :print_button :printer_button
     alias :search_button :magnifier_button
-
     
   end
   
