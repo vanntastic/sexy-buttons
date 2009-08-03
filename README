@@ -40,7 +40,7 @@ HELPERS AND METHODS
 ===================
 
 - bring_sexy_back options={}
-  ---------------
+  --------------------------
   An include helper method that automatically includes all the css files that you need, assuming that you ran the rake installation task, you can pass :rounded as true to use the rounded versions of the sexy buttons.
   
 - sexy_buttons(html_options={},&block)
@@ -65,7 +65,6 @@ TODO
 ====
 
 - write tests
-- create a rounded version based on this oscar's version : http://is.gd/3ybw
 
 COPYRIGHT Mumbo Jumbo
 
