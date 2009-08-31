@@ -24,4 +24,17 @@ namespace :sexy_buttons do
     
   end
   
+  desc 'Lists the current buttons that you can use, outputs it with less viewer'
+  task :list do
+    icon_list = File.join(PUBLIC_PATH,"images","icons")
+    icons = Dir.glob File.join(icon_list, "*.png")
+    icons.map! { |i| "#{i.split('/').last.split('.').first}_button" }
+    icons = icons.join("\n")
+    less icons
+  end
+  
+  def less(content)
+    system('echo "' << content << '"|less')
+  end
+  
 end

@@ -60,6 +60,16 @@ HELPERS AND METHODS
 - submit(value='', html_options={})
   ---------------------------------
   A sexy button alternative to submit_tag, takes the same options as submit_tag
+  
+- rake sexy_buttons:list
+  ----------------------
+  Browsing the directory to find the names of the icon buttons can be tiresome 
+  over time. Just run:
+  
+      rake sexy_buttons:list
+      
+  To get a list of all the buttons that you can use + you get less to help you scan
+  it too!
 
 TODO
 ====
