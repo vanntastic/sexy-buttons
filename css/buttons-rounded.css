@@ -41,12 +41,12 @@
 
 /* STANDARD */
 
-button:hover, .buttons a:hover{
+button:hover, .buttons a:hover, .buttons a.active{
     background-color:#dff4ff;
     border:1px solid #c2e1ef;
     color:#336699;
 }
-.buttons a:active{
+.buttons a:active {
     background-color:#6299c5;
     border:1px solid #6299c5;
     color:#fff;
